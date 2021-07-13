@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    {% for cohort in cohorts %}
+      <div>
+        <li><a href="{% url 'cohort_detail' cohort_id=cohort.id %}">{{ cohort.cohort_name }}</a></li>
+      </div>
+      {% endfor %}
+  </ul>
+  <div>
+    <a href="{% url 'corhort_new'%}">CREATE NEW COHORT</a>
+  </div>
+</body>
+</html>

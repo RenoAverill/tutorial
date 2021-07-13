@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h2>{{ cohort_detail.cohort_name }}</h2>
+    <br>
+    <h4>START DATE: {{ cohort_detail.start_date }}</h4>
+    <br>
+    <h4>END DATE: {{ cohort_detail.end_date }}</h4>
+    <br>
+    <form name="delete_cohort" method="POST" action="{% url 'cohort_delete' cohort_id=cohort_detail.id %}">
+      {% csrf_token %}
+      <input type="submit" value="Delete cohort" />
+    </form>
+  </div>
+</body>
+</html>
